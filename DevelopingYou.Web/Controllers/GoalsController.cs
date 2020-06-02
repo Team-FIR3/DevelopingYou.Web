@@ -10,7 +10,7 @@ namespace DevelopingYou.Web.Controllers
 {
     public class GoalsController : Controller
     {
-        IGoalService goalService;
+        private readonly IGoalService goalService;
 
         public GoalsController(IGoalService goalService)
         {

@@ -8,7 +8,7 @@ namespace DevelopingYou.Web.Services
 {
     public interface IInstanceService
     {
-        Task<Instance> GetInstances();
+        Task<IEnumerable<Instance>> GetInstances();
         Task<Instance> GetInstanceById(int id);
         Task<Instance> Create(Instance instance);
         Task Delete(int id);

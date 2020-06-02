@@ -58,11 +58,11 @@ namespace DevelopingYou.Web.Services
             return result;
         }
 
-        public async Task<Instance> GetInstances()
+        public async Task<IEnumerable<Instance>> GetInstances()
         {
             //May need list of instances 
             var responseStream = await client.GetStreamAsync("Instances");
-            Instance result = await JsonSerializer.DeserializeAsync<Instance>(responseStream);
+            List<Instance> result = await JsonSerializer.DeserializeAsync<List<Instance>>(responseStream);
             return result;
         }
         public async Task Delete(int id)

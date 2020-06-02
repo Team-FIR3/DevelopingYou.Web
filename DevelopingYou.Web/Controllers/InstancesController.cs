@@ -15,7 +15,7 @@ namespace DevelopingYou.Web.Controllers
 
         public InstancesController(IInstanceService instance)
         {
-            instanceService = instanceService;
+            this.instanceService = instanceService;
         }
         //GET
         public async Task<ActionResult> Index()

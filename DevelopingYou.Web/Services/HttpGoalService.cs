@@ -32,12 +32,14 @@ namespace DevelopingYou.Web.Services
             using (var content = new StringContent(JsonSerializer.Serialize(goal), System.Text.Encoding.UTF8, "application/json"))
             {
                 var response = await client.PostAsync("Goals", content);
+
                 if (response.StatusCode == System.Net.HttpStatusCode.Created)
                 {
                     var responseStream = await response.Content.ReadAsStreamAsync();
                     Goal result = await JsonSerializer.DeserializeAsync<Goal>(responseStream);
                     return result;
                 }
+
                 var errorBody = await response.Content.ReadAsStringAsync();
                 throw new Exception($"Failed to POST data: ({response.StatusCode})");
             }

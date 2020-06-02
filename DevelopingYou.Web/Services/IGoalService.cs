@@ -9,5 +9,6 @@ namespace DevelopingYou.Web.Services
     public interface IGoalService
     {
         Task<List<Goal>> GetGoals();
+        Task<Goal> CreateGoal(Goal goal);
     }
 }

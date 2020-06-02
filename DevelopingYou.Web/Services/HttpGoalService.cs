@@ -18,7 +18,6 @@ namespace DevelopingYou.Web.Services
             this.client = client;
         }
 
-        //add http--service
         public async Task<List<Goal>> GetGoals()
         {
             var responseStream = await client.GetStreamAsync("Goals");
@@ -27,5 +26,23 @@ namespace DevelopingYou.Web.Services
 
             return result;
         }
+
+        public async Task<Goal> CreateGoal(Goal goal)
+        {
+            using (var content = new StringContent(JsonSerializer.Serialize(goal), System.Text.Encoding.UTF8, "application/json"))
+            {
+                var response = await client.PostAsync("Goals", content);
+                if (response.StatusCode == System.Net.HttpStatusCode.Created)
+                {
+                    var responseStream = await response.Content.ReadAsStreamAsync();
+                    Goal result = await JsonSerializer.DeserializeAsync<Goal>(responseStream);
+                    return result;
+                }
+                var errorBody = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Failed to POST data: ({response.StatusCode})");
+            }
+        }
+
+
     }
 }

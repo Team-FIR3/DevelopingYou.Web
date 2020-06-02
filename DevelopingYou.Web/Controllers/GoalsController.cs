@@ -23,5 +23,19 @@ namespace DevelopingYou.Web.Controllers
 
             return View(goals);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(Goal goal)
+        {
+            try
+            {
+                await goalService.CreateGoal(goal);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

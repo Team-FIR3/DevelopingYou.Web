@@ -51,9 +51,11 @@ namespace DevelopingYou.Web.Services
             throw new NotImplementedException();
         }
 
-        public Task<Instance> GetInstances()
+        public async Task<Instance> GetInstances()
         {
-            throw new NotImplementedException();
+            var responseStream = await client.GetStreamAsync("Instances");
+            Instance result = await JsonSerializer.DeserializeAsync<Instance>(responseStream);
+            return result;
         }
     }
 }

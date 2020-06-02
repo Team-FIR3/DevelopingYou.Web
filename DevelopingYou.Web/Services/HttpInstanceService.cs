@@ -46,13 +46,17 @@ namespace DevelopingYou.Web.Services
             throw new NotImplementedException();
         }
 
-        public Task<Instance> GetInstanceById(int id)
+        public async Task<Instance> GetInstanceById(int id)
         {
-            throw new NotImplementedException();
+
+            var responseStream = await client.GetStreamAsync($"Instances/{id}");
+            Instance result = await JsonSerializer.DeserializeAsync<Instance>(responseStream);
+            return result;
         }
 
         public async Task<Instance> GetInstances()
         {
+            //May need list of instances 
             var responseStream = await client.GetStreamAsync("Instances");
             Instance result = await JsonSerializer.DeserializeAsync<Instance>(responseStream);
             return result;

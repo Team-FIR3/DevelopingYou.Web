@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Services
 {
-    interface IGoalService
+    public interface IGoalService
     {
     }
 }

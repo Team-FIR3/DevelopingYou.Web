@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Services
 {
-    public class HttpGoalService
+    public class HttpGoalService : IGoalService
     {
+        //add private readonly httpclient
+
+        //add http--service
     }
 }

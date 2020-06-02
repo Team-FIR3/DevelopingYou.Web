@@ -35,12 +35,6 @@ namespace DevelopingYou.Web.Services
                 throw new Exception($"Failed to POST data: ({response.StatusCode})");
             }
         }
-
-        public Task Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<Instance> Edit(int id, Instance instance)
         {
             using (var content = new StringContent(JsonSerializer.Serialize(instance), System.Text.Encoding.UTF8, "application/json"))
@@ -70,6 +64,11 @@ namespace DevelopingYou.Web.Services
             var responseStream = await client.GetStreamAsync("Instances");
             Instance result = await JsonSerializer.DeserializeAsync<Instance>(responseStream);
             return result;
+        }
+        public async Task Delete(int id)
+        {
+            var response = await client.DeleteAsync($"Instances/{id}");
+            response.EnsureSuccessStatusCode();
         }
     }
 }

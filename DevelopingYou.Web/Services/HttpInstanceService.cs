@@ -41,9 +41,19 @@ namespace DevelopingYou.Web.Services
             throw new NotImplementedException();
         }
 
-        public Task<Instance> Edit(int id, Instance instance)
+        public async Task<Instance> Edit(int id, Instance instance)
         {
-            throw new NotImplementedException();
+            using (var content = new StringContent(JsonSerializer.Serialize(instance), System.Text.Encoding.UTF8, "application/json"))
+            {
+                var response = await client.PutAsync($"Instances/{id}", content);
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+
+                    return instance;
+                }
+                var errorBody = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Failed to POST data: ({response.StatusCode})");
+            }
         }
 
         public async Task<Instance> GetInstanceById(int id)

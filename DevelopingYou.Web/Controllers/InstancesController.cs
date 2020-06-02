@@ -50,5 +50,28 @@ namespace DevelopingYou.Web.Controllers
                 return View();
             }
         }
+
+        //GET
+        public async Task<ActionResult> Edit (int id)
+        {
+            var instance = await instanceService.GetInstanceById(id);
+            return View(instance);
+        }
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(int id, Instance instance)
+        {
+            try
+            {
+                await instanceService.Edit(id, instance);
+                return RedirectToAction(nameof(Index));
+
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

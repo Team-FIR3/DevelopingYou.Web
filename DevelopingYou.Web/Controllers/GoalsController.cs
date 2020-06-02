@@ -2,15 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DevelopingYou.Web.Models;
+using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevelopingYou.Web.Controllers
 {
     public class GoalsController : Controller
     {
-        public IActionResult Index()
+        private readonly IGoalService goalService;
+
+        public GoalsController(IGoalService goalService)
         {
-            return View();
+            this.goalService = goalService;
+        }
+
+        public async Task<ActionResult<Goal>> Index()
+        {
+            var goals = await goalService.GetGoals();
+
+            return View(goals);
         }
     }
 }

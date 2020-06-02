@@ -7,5 +7,6 @@ namespace DevelopingYou.Web.Services
 {
     public interface IGoalService
     {
+        Task GetGoals();
     }
 }

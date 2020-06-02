@@ -25,7 +25,7 @@ namespace DevelopingYou.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(Goal goal)
+        public async Task<ActionResult<Goal>> Create(Goal goal)
         {
             try
             {

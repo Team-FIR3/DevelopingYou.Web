@@ -9,28 +9,28 @@ namespace DevelopingYou.Web.Models
 {
     public class Goal
     {
-        [JsonPropertyName("Id")]
+        [JsonPropertyName("id")]
         public int Id { get; set; }
 
-        [JsonPropertyName("User Id")]
+        [JsonPropertyName("userid")]
         public int UserId { get; set; }
 
         [Required]
-        [JsonPropertyName("Title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
         [Required]
-        [JsonPropertyName("Start Value")]
+        [JsonPropertyName("startValue")]
         public decimal StartValue { get; set; }
 
         [Required]
-        [JsonPropertyName("Target Value")]
+        [JsonPropertyName("targetValue")]
         public decimal TargetValue { get; set; }
 
-        [JsonPropertyName("Category")]
+        [JsonPropertyName("category")]
         public Category Category { get; set; }
 
-        [JsonPropertyName("Instances")]
+        [JsonPropertyName("instances")]
         public ICollection<Instance> Instances { get; set; }
     }
 

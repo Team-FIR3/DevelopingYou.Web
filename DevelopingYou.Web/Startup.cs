@@ -38,6 +38,7 @@ namespace DevelopingYou.Web
 
             // Singleton<WebServices go here>
             services.AddSingleton<IInstanceService, HttpInstanceService>();
+            services.AddSingleton<IGoalService, HttpGoalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

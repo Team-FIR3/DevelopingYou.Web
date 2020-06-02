@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,13 +28,16 @@ namespace DevelopingYou.Web
         {
             services.AddControllersWithViews();
 
-            // TODO:
-            // HTTP client dependency/using goes here
-            // API_URL
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(Configuration.GetValue<string>("API_URL")),
+            };
+            services.AddSingleton<HttpClient>(httpClient);
 
             // TODO:
-            // Singleton<HttpClient>
+
             // Singleton<WebServices go here>
+            services.AddSingleton<IInstanceService, HttpInstanceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

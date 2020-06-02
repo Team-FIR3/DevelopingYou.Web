@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Services
 {
-    interface IInstanceService
+    public interface IInstanceService
     {
     }
 }

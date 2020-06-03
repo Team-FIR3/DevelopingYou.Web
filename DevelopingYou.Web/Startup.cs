@@ -36,7 +36,11 @@ namespace DevelopingYou.Web
             services.AddSingleton<HttpClient>(httpClient);
 
             // TODO:
+
+
             // Singleton<WebServices go here>
+
+            services.AddSingleton<IInstanceService, HttpInstanceService>();
             services.AddSingleton<IGoalService, HttpGoalService>();
         }
 

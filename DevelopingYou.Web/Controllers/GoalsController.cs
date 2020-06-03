@@ -45,7 +45,9 @@ namespace DevelopingYou.Web.Controllers
 
         public async Task<ActionResult> Details(int id)
         {
-            var goal = await goalService.GetOneGoal(int id);
+            var goal = await goalService.GetOneGoal(id);
+
+            return View(goal);
         }
 
         [HttpPut]

@@ -73,5 +73,6 @@ namespace DevelopingYou.Web.Services
             var response = await client.DeleteAsync($"Goals/{id}");
             response.EnsureSuccessStatusCode();
         }
+
     }
 }

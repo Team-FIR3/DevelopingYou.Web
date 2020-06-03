@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,7 +36,11 @@ namespace DevelopingYou.Web
             services.AddSingleton<HttpClient>(httpClient);
 
             // TODO:
+
+
             // Singleton<WebServices go here>
+            services.AddSingleton<IInstanceService, HttpInstanceService>();
+            services.AddSingleton<IGoalService, HttpGoalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -45,6 +45,13 @@ namespace DevelopingYou.Web.Services
             }
         }
 
+        public async Task<Goal> GetOneGoal(int id)
+        {
+            var responseStream = await client.GetStreamAsync($"Goals/{id}");
 
+            Goal result = await JsonSerializer.DeserializeAsync<Goal>(responseStream);
+
+            return result;
+        }
     }
 }

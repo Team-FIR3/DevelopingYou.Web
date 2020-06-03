@@ -10,5 +10,6 @@ namespace DevelopingYou.Web.Services
     {
         Task<List<Goal>> GetGoals();
         Task<Goal> CreateGoal(Goal goal);
+        Task<Goal> GetOneGoal(int id);
     }
 }

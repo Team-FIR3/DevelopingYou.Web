@@ -42,5 +42,16 @@ namespace DevelopingYou.Web.Controllers
                 return View();
             }
         }
+
+        public async Task<ActionResult> Details(int id)
+        {
+            var goal = await goalService.GetOneGoal(int id);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<Goal>> Edit(int id)
+        {
+            return NoContent();
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace DevelopingYou.Web.Controllers
 
         public InstancesController(IInstanceService instance)
         {
-            this.instanceService = instanceService;
+            this.instanceService = instance;
         }
         //GET
         public async Task<ActionResult> Index()
@@ -19,7 +19,7 @@ namespace DevelopingYou.Web.Controllers
             var instances = await instanceService.GetInstances();
             //Add orderby maybe?
 
-            return View();
+            return View(instances);
         }
         //Get instance
         public async Task<ActionResult> Details(int id)
@@ -28,15 +28,26 @@ namespace DevelopingYou.Web.Controllers
             return View(instance);
         }
         //GET: This is where we see the form
-        public ActionResult Create()
+        [Route("goals/{goalId}/instances/create")]
+        public ActionResult Create(int goalId)
         {
-            return View();
+            var instance = new Instance
+            {
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now
+            };
+
+            return View(instance);
         }
         //POST Instance Create
-        public async Task<ActionResult> Create(Instance instance)
+        [HttpPost]
+        [Route("goals/{goalId}/instances/create")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(Instance instance, int goalId)
         {
             try
             {
+                instance.GoalId = goalId;
                 await instanceService.Create(instance);
                 return RedirectToAction(nameof(Index));
 

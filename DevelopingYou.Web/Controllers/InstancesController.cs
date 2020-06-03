@@ -23,7 +23,7 @@ namespace DevelopingYou.Web.Controllers
             var instances = await instanceService.GetInstances();
             //Add orderby maybe?
 
-            return View();
+            return View(instances);
         }
         //Get instance
         public async Task<ActionResult> Details(int id)

@@ -24,6 +24,11 @@ namespace DevelopingYou.Web.Controllers
             return View(goals);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<ActionResult<Goal>> Create(Goal goal)
         {

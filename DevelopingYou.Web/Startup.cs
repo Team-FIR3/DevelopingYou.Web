@@ -32,9 +32,11 @@ namespace DevelopingYou.Web
             {
                 BaseAddress = new Uri(Configuration.GetValue<string>("API_URL")),
             };
+
             services.AddSingleton<HttpClient>(httpClient);
 
             // TODO:
+
 
             // Singleton<WebServices go here>
             services.AddSingleton<IInstanceService, HttpInstanceService>();

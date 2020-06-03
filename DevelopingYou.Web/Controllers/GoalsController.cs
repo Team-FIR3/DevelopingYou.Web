@@ -10,10 +10,14 @@ namespace DevelopingYou.Web.Controllers
     {
         private readonly IGoalService goalService;
 
+
+
         public GoalsController(IGoalService goalService)
         {
             this.goalService = goalService;
         }
+
+        [Route("/")]
 
         public async Task<ActionResult<Goal>> Index()
         {

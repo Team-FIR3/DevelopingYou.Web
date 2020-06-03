@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DevelopingYou.Web.Models.Goal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TargetValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { modelItem = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { modelItem = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { modelItem = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

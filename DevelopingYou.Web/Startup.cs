@@ -39,6 +39,7 @@ namespace DevelopingYou.Web
 
 
             // Singleton<WebServices go here>
+
             services.AddSingleton<IInstanceService, HttpInstanceService>();
             services.AddSingleton<IGoalService, HttpGoalService>();
         }

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DevelopingYou.Web.Models;
+﻿using DevelopingYou.Web.Models;
 using DevelopingYou.Web.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Controllers
 {
@@ -22,6 +20,14 @@ namespace DevelopingYou.Web.Controllers
             var goals = await goalService.GetGoals();
 
             return View(goals);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Details(int id)
+        {
+            var goal = await goalService.GetOneGoal(id);
+
+            return View(goal);
         }
 
         public ActionResult Create()
@@ -43,17 +49,46 @@ namespace DevelopingYou.Web.Controllers
             }
         }
 
-        public async Task<ActionResult> Details(int id)
+        public async Task<ActionResult> Edit(int id)
         {
             var goal = await goalService.GetOneGoal(id);
 
             return View(goal);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<Goal>> Edit(int id)
+        [HttpPost]
+        public async Task<ActionResult<Goal>> Edit(int id, Goal goal)
         {
-            return NoContent();
+            try
+            {
+                await goalService.Edit(id, goal);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public async Task<ActionResult> Delete(int id)
+        {
+            var goal = await goalService.GetOneGoal(id);
+
+            return View(goal);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                await goalService.Delete(id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

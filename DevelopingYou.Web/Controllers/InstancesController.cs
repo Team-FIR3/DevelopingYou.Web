@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Threading.Tasks;
-using DevelopingYou.Web.Models;
+﻿using DevelopingYou.Web.Models;
 using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Controllers
 {
     public class InstancesController : Controller
     {
         IInstanceService instanceService;
-        
+
         public InstancesController(IInstanceService instance)
         {
             this.instanceService = instanceService;
@@ -52,7 +48,7 @@ namespace DevelopingYou.Web.Controllers
         }
 
         //GET
-        public async Task<ActionResult> Edit (int id)
+        public async Task<ActionResult> Edit(int id)
         {
             var instance = await instanceService.GetInstanceById(id);
             return View(instance);

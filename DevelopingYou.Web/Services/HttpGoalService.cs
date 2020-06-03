@@ -1,7 +1,6 @@
 ﻿using DevelopingYou.Web.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -52,6 +51,27 @@ namespace DevelopingYou.Web.Services
             Goal result = await JsonSerializer.DeserializeAsync<Goal>(responseStream);
 
             return result;
+        }
+
+        public async Task<Goal> Edit(int id, Goal goal)
+        {
+            using (var content = new StringContent(JsonSerializer.Serialize(goal),
+                System.Text.Encoding.UTF8, "application/json"))
+            {
+                var response = await client.PutAsync($"Goals/{id}", content);
+                if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                {
+                    return goal;
+                }
+                var errorBody = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Failed to update data: ({response.StatusCode})");
+            }
+        }
+
+        public async Task Delete(int id)
+        {
+            var response = await client.DeleteAsync($"Goals/{id}");
+            response.EnsureSuccessStatusCode();
         }
     }
 }

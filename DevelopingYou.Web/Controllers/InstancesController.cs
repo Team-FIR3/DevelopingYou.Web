@@ -12,7 +12,7 @@ namespace DevelopingYou.Web.Controllers
     public class InstancesController : Controller
     {
         IInstanceService instanceService;
-
+        
         public InstancesController(IInstanceService instance)
         {
             this.instanceService = instanceService;

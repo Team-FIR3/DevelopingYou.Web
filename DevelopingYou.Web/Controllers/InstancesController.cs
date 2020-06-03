@@ -32,15 +32,26 @@ namespace DevelopingYou.Web.Controllers
             return View(instance);
         }
         //GET: This is where we see the form
-        public ActionResult Create()
+        [Route("goals/{goalId}/instances/create")]
+        public ActionResult Create(int goalId)
         {
-            return View();
+            var instance = new Instance
+            {
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now
+            };
+
+            return View(instance);
         }
         //POST Instance Create
-        public async Task<ActionResult> Create(Instance instance)
+        [HttpPost]
+        [Route("goals/{goalId}/instances/create")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create(Instance instance, int goalId)
         {
             try
             {
+                instance.GoalId = goalId;
                 await instanceService.Create(instance);
                 return RedirectToAction(nameof(Index));
 

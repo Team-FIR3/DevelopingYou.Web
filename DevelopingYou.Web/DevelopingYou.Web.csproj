@@ -8,6 +8,7 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Goals\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="Views\About\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />

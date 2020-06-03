@@ -17,7 +17,7 @@ namespace DevelopingYou.Web.Controllers
             this.goalService = goalService;
         }
 
-        [Route("/")]
+        //[Route("/")]
 
         public async Task<ActionResult<Goal>> Index()
         {

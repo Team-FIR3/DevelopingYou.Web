@@ -17,10 +17,10 @@ namespace DevelopingYou.Web.Models
         // public string Date { get; set; }
 
         [JsonPropertyName("startTime")]
-        public string StartTime { get; set; }
+        public DateTime StartTime { get; set; }
 
         [JsonPropertyName("endTime")]
-        public string EndTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         [JsonPropertyName("comment")]
         public string Comment { get; set; }

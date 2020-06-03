@@ -6,6 +6,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Views\Home\" />
+
+
     <Folder Include="Views\Goals\" />
     <Folder Include="wwwroot\" />
     <Folder Include="Views\About\" />

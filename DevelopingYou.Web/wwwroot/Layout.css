@@ -1,0 +1,58 @@
+﻿body {
+
+}
+
+header{
+    text-align: center;
+}
+
+header a {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.developing-you-heading{
+    font: 30px;
+    font-weight: bold;
+    display:block;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.goals-details-card {
+    border: inset;
+    border-radius: .3em;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+
+}
+
+.goals-details-inside{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.instances-log{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.instances-log-heading{
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.goal-comment{
+    display: block;
+}
+
+.instance-entry{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.chart{
+    width: 500px;
+    height: 300px;
+}
+

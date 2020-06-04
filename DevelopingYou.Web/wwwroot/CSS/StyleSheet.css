@@ -61,7 +61,8 @@ footer {
 .ChaseWords, .MarieWords, .StaceyWords, .FrancescoWords {
     grid-column: 3 / 3;
     align-self: center;
-    margin: 5px;
+    margin: 10px 5px 10px 5px;
+    
 }
 
 .AboutSection {

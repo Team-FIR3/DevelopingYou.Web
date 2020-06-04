@@ -42,3 +42,17 @@ footer {
     position: fixed;
     width: 460px;
 }
+
+
+/* --- About us page ---*/
+
+#aboutuscontent {
+    display: grid;
+    grid-template-columns: 180px 15px auto 15px;
+}
+
+.Chase, .Marie, .Stacey, .Francesco {
+    grid-column: 1 / 1;
+    align-self: center;
+    border-radius: 50%;
+}

@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.goals-details-card {
+    border: inset;
+    border-radius: .3em;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    
+}
+
+.chart{
+    width: 500px;
+    height: 300px;
+}
+
+.breakdown{
+    margin: 0 auto;
+}

@@ -6,53 +6,45 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Goal</h4>
+<div class="goals-details-card">
+    <h4>
+        @Html.DisplayFor(model => model.Title)
+    </h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StartValue)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StartValue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TargetValue)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TargetValue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-        @foreach (var item in Model.Instances)
-        {
-
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => item.Comment)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => item.Comment)
-            </dd>
-        }
 
 
-    </dl>
+    <span>
+        @Html.DisplayFor(model => model.StartValue)
+        @Html.DisplayFor(model => model.StartValue)
+    </span>
+    <span>
+        @Html.DisplayNameFor(model => model.TargetValue)
+        @Html.DisplayFor(model => model.TargetValue)
+    </span>
+    <span>
+        @Html.DisplayNameFor(model => model.Category)
+        @Html.DisplayFor(model => model.Category)
+    </span>
 
+    @foreach (var item in Model.Instances)
+    {
+        <span class="goal-comment">
+            @Html.DisplayNameFor(model => item.Comment)
+            @Html.DisplayFor(model => item.Comment)
+        </span>
+    }
+    <div class="goal-details-options">
+        @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
+        @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = Model.Id })
 
-  
     </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+
+</div>
+
+
+ 
+
+<div class="breakdown">
+    <h2>Goal Breakdown:</h2>
+    <img src="~/Assets/ChartPlaceholder.png" class="chart" />
 </div>

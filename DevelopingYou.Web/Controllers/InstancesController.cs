@@ -15,10 +15,11 @@ namespace DevelopingYou.Web.Controllers
             this.instanceService = instance;
         }
         //GET
-        public async Task<ActionResult> Index()
+        [Route("goals/{goalId}/instances")]
+        public async Task<ActionResult> Index(int goalId)
         {
-            var instances = await instanceService.GetInstances();
-            //Add orderby maybe?
+            var instances = await instanceService.GetInstances(goalId);
+           
 
             return View(instances);
         }
@@ -30,8 +31,10 @@ namespace DevelopingYou.Web.Controllers
         }
         //GET: This is where we see the form
         [Route("goals/{goalId}/instances/create")]
-        public ActionResult Create(int goalId)
+        public ActionResult Create()
         {
+
+            //this is what creates those calendars
             var instance = new Instance
             {
                 StartTime = DateTime.Now,
@@ -44,13 +47,13 @@ namespace DevelopingYou.Web.Controllers
         [HttpPost]
         [Route("goals/{goalId}/instances/create")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Instance instance, int goalId)
+        public async Task<ActionResult> Create(Instance instance)
         {
             try
             {
-                instance.GoalId = goalId;
+               // instance.GoalId = goalId;
                 await instanceService.Create(instance);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { goalId = instance.GoalId });
 
             }
             catch

@@ -26,7 +26,11 @@ header a:visited {
 
 body {
     padding-top: 50px;
+<<<<<<< HEAD
     max-width: 500px;
+=======
+    max-width: 460px;
+>>>>>>> master
     margin: 0 auto;
 
 }
@@ -41,4 +45,29 @@ footer {
     color: white;
     position: fixed;
     width: 500px;
+}
+
+
+/* --- About us page ---*/
+
+#aboutuscontent {
+    display: grid;
+    grid-template-columns: 180px 15px auto 15px;
+}
+
+.Chase, .Marie, .Stacey, .Francesco {
+    grid-column: 1 / 1;
+    align-self: center;
+    border-radius: 50%;
+}
+
+.ChaseWords, .MarieWords, .StaceyWords, .FrancescoWords {
+    grid-column: 3 / 3;
+    align-self: center;
+    margin: 5px;
+}
+
+.AboutSection {
+    grid-column: 1 / 4;
+    margin-bottom: 10px;
 }

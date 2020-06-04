@@ -6,7 +6,7 @@ header {
     background: #CE9B8C;
     color: white;
     position: fixed;
-    width: 460px;
+    width: 500px;
 
 
 }
@@ -26,7 +26,11 @@ header a:visited {
 
 body {
     padding-top: 50px;
+<<<<<<< HEAD
+    max-width: 500px;
+=======
     max-width: 460px;
+>>>>>>> master
     margin: 0 auto;
 
 }
@@ -40,7 +44,7 @@ footer {
     background: #CE9B8C;
     color: white;
     position: fixed;
-    width: 460px;
+    width: 500px;
 }
 
 

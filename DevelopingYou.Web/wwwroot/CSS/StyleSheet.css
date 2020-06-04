@@ -51,6 +51,7 @@ footer {
 #aboutuscontent {
     display: grid;
     grid-template-columns: 180px 15px auto 15px;
+
 }
 
 .Chase, .Marie, .Stacey, .Francesco {
@@ -62,7 +63,7 @@ footer {
 .ChaseWords, .MarieWords, .StaceyWords, .FrancescoWords {
     grid-column: 3 / 3;
     align-self: center;
-    margin: 10px 5px 10px 5px;
+    margin: 15px 5px 15px 5px;
     
 }
 

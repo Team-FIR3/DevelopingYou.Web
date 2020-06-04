@@ -9,30 +9,31 @@
 @section Header {
 
     <h1>Active Goals</h1>
+    <img src="~/Assets/progressBar.png" />
 
 }
 <body>
     <main>
 
-      
-  <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
+        <table>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                       
-                    </td>
-                    <td>
-                      
-                    </td>
-                 
-                </tr>
-            }
-        </tbody>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
 
 
 

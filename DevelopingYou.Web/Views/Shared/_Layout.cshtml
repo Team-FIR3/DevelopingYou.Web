@@ -13,17 +13,24 @@
 </head>
 <body>
     <header>
+        <h1 class="developing-you-heading">Developing You</h1>
         <a asp-action="Index" asp-controller="Home">Home</a>
         <a asp-action="Index" asp-controller="Goals">Goals</a>
         <a asp-action="Index" asp-controller="About">About</a>
 
     </header>
     @RenderSection("Header", required: false)
+
     <div>
         @RenderBody()
     </div>
 
     @RenderSection("Scripts", required: false)
+
+    <footer>
+        ATTN Productions ©
+    </footer>
+    @RenderSection("Footer", required: false)
 
 </body>
 </html>

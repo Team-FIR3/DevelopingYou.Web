@@ -12,31 +12,53 @@
     </h4>
     <hr />
 
-
-    <span>
-        @Html.DisplayFor(model => model.StartValue)
-        @Html.DisplayFor(model => model.StartValue)
-    </span>
-    <span>
-        @Html.DisplayNameFor(model => model.TargetValue)
-        @Html.DisplayFor(model => model.TargetValue)
-    </span>
-    <span>
-        @Html.DisplayNameFor(model => model.Category)
-        @Html.DisplayFor(model => model.Category)
-    </span>
-
-    @foreach (var item in Model.Instances)
-    {
-        <span class="goal-comment">
-            @Html.DisplayNameFor(model => item.Comment)
-            @Html.DisplayFor(model => item.Comment)
+    <div class="goals-details-inside">
+        <span>
+            Start Value:
+            @Html.DisplayFor(model => model.StartValue)
         </span>
-    }
-    <div class="goal-details-options">
-        @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
-        @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = Model.Id })
 
+        <span>
+            Goal: 
+            @Html.DisplayFor(model => model.TargetValue)
+        </span>
+
+        <span>
+            End Date:
+            @Html.DisplayFor(model => model.EndDate.Date)
+        </span>
+
+        <div class="goal-details-options">
+            @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
+            @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = Model.Id })
+
+        </div>
+
+        <div class="instances-log-heading">
+
+        </div>
+
+        <div class="instances-log">
+
+
+
+            @foreach (var item in Model.Instances)
+            {
+                <div class="instance-entry">
+                    <span class="instance-start-time">
+                        @Html.DisplayFor(model => item.StartTime)
+                        -
+                    </span>
+                    <span class="instance-end-time">
+                        @Html.DisplayFor(model => item.EndTime.TimeOfDay)
+                    </span>
+                    
+                    <span class="goal-comment">
+                        @Html.DisplayFor(model => item.Comment)
+                    </span>
+                </div>
+            }
+        </div>
     </div>
 
 </div>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -26,6 +27,12 @@ namespace DevelopingYou.Web.Models
 
         [JsonPropertyName("category")]
         public Category Category { get; set; }
+
+        [JsonPropertyName("startDate")]
+        public DateTime StartDate { get; set; }
+
+        [JsonPropertyName("endDate")]
+        public DateTime EndDate { get; set; }
 
         [JsonPropertyName("instances")]
         public ICollection<Instance> Instances { get; set; }

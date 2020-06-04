@@ -28,6 +28,7 @@ body {
     padding-top: 50px;
     max-width: 500px;
     margin: 0 auto;
+    padding-bottom: 30px;
 
 }
 
@@ -41,6 +42,7 @@ footer {
     color: white;
     position: fixed;
     width: 500px;
+    text-align: center;
 }
 
 
@@ -49,6 +51,7 @@ footer {
 #aboutuscontent {
     display: grid;
     grid-template-columns: 180px 15px auto 15px;
+
 }
 
 .Chase, .Marie, .Stacey, .Francesco {
@@ -60,10 +63,53 @@ footer {
 .ChaseWords, .MarieWords, .StaceyWords, .FrancescoWords {
     grid-column: 3 / 3;
     align-self: center;
-    margin: 5px;
+    margin: 15px 5px 15px 5px;
+    
 }
 
 .AboutSection {
     grid-column: 1 / 4;
     margin-bottom: 10px;
+}
+
+/* --- Main Page --- */
+
+.wrapper {
+    display: grid;
+    
+}
+
+.active-goal {
+    display: grid;
+    grid-template-columns: 20px 50px 50px 50px 10px 300px 20px;
+    grid-template-rows: 10px 35% 35% 20% 10px;
+}
+
+.hometext {
+    grid-column: 2 / 4;
+    grid-row: 2 / 2;
+}
+
+.firstBadge {
+    grid-column: 2 / 2;
+
+}
+
+.secondBadge {
+    grid-column: 3 / 3;
+
+}
+
+.thirdBadge {
+    grid-column: 4 / 4;
+
+}
+
+.firstBadge, .secondBadge, .thirdBadge {
+    grid-row: 3 / 3;
+}
+
+.progressBar {
+    grid-column: 6 / 6;
+    grid-row: 2 / 4;
 }

@@ -24,7 +24,7 @@ namespace DevelopingYou.Web.Services
         {
             using (var content = new StringContent(JsonSerializer.Serialize(instance), System.Text.Encoding.UTF8, "application/json"))
             {
-                var response = await client.PostAsync("Instances", content);
+                var response = await client.PostAsync($"Goals/{instance.GoalId}/Instances", content);
                 if (response.StatusCode == System.Net.HttpStatusCode.Created)
                 {
                     var responseStream = await response.Content.ReadAsStreamAsync();
@@ -57,10 +57,10 @@ namespace DevelopingYou.Web.Services
             return result;
         }
 
-        public async Task<IEnumerable<Instance>> GetInstances()
+        public async Task<IEnumerable<Instance>> GetInstances(int goalId)
         {
             //May need list of instances 
-            var responseStream = await client.GetStreamAsync("Instances");
+            var responseStream = await client.GetStreamAsync($"Goals/{goalId}/Instances");
             List<Instance> result = await JsonSerializer.DeserializeAsync<List<Instance>>(responseStream);
             return result;
         }

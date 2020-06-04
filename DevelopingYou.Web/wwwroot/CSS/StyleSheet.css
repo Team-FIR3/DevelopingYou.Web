@@ -81,8 +81,8 @@ footer {
 
 .active-goal {
     display: grid;
-    grid-template-columns: 5% 10% 10% 10% 5% 60% 5%;
-    grid-template-rows: 5% 35% 35% 20% 5%
+    grid-template-columns: 20px 50px 50px 50px 10px 300px 20px;
+    grid-template-rows: 10px 35% 35% 20% 10px;
 }
 
 .hometext {

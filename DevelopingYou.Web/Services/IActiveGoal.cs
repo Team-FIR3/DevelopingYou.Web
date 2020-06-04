@@ -8,6 +8,6 @@ namespace DevelopingYou.Web.Services
 {
     public interface IActiveGoal
     {
-        Task<List<Goal>> GetActiveGoals();
+        Task<IEnumerable<Goal>> GetActiveGoals();
     }
 }

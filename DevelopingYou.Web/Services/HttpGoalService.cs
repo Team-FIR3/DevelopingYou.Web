@@ -74,13 +74,6 @@ namespace DevelopingYou.Web.Services
             response.EnsureSuccessStatusCode();
         }
 
-        public async Task<List<Goal>> GetActiveGoals()
-        {
-            var responseStream = await client.GetStreamAsync("Goals/Active");
-
-            List<Goal> result = await JsonSerializer.DeserializeAsync<List<Goal>>(responseStream);
-
-            return result;
-        }
+       
     }
 }

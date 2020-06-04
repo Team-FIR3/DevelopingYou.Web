@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<DevelopingYou.Web.Models.Goal>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,55 +13,28 @@
 }
 <body>
     <main>
-        <div class="firstActiveGoal">
-            <h2>how do i use linq here</h2>
-           <div>
-               Progress Bar
-           </div>
-            <ul>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-            </ul>
-        </div>
-        <div class="secondActiveGoal">
-            <div>
-                Progress Bar
-            </div>
-            <ul>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-            </ul>
-        </div>
-        <div class="thirdActiveGoal">
-            <div>
-                Progress Bar
-            </div>
-            <ul>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-                <li>
-                    Badge
-                </li>
-            </ul>
-        </div>
+
+        @Html.DisplayNameFor(model => model.Title)
+  <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                       
+                    </td>
+                    <td>
+                      
+                    </td>
+                 
+                </tr>
+            }
+        </tbody>
+
+
 
 
     </main>

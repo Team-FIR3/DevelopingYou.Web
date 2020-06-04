@@ -24,7 +24,7 @@ namespace DevelopingYou.Web.Services
         {
             using (var content = new StringContent(JsonSerializer.Serialize(instance), System.Text.Encoding.UTF8, "application/json"))
             {
-                var response = await client.PostAsync("Instances", content);
+                var response = await client.PostAsync($"Goals/{instance.GoalId}/Instances", content);
                 if (response.StatusCode == System.Net.HttpStatusCode.Created)
                 {
                     var responseStream = await response.Content.ReadAsStreamAsync();

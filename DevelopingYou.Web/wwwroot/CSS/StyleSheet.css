@@ -71,3 +71,45 @@ footer {
     grid-column: 1 / 4;
     margin-bottom: 10px;
 }
+
+/* --- Main Page --- */
+
+.wrapper {
+    display: grid;
+    
+}
+
+.active-goal {
+    display: grid;
+    grid-template-columns: 5% 10% 10% 10% 5% 60% 5%;
+    grid-template-rows: 5% 35% 35% 20% 5%
+}
+
+.hometext {
+    grid-column: 2 / 4;
+    grid-row: 2 / 2;
+}
+
+.firstBadge {
+    grid-column: 2 / 2;
+
+}
+
+.secondBadge {
+    grid-column: 3 / 3;
+
+}
+
+.thirdBadge {
+    grid-column: 4 / 4;
+
+}
+
+.firstBadge, .secondBadge, .thirdBadge {
+    grid-row: 3 / 3;
+}
+
+.progressBar {
+    grid-column: 6 / 6;
+    grid-row: 2 / 4;
+}

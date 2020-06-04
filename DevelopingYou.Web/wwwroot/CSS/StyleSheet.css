@@ -7,6 +7,16 @@ header {
     color: white;
     position: fixed;
     width: 100%;
+
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
 }
 
 

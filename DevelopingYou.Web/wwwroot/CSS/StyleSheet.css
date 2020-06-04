@@ -62,3 +62,8 @@ footer {
     align-self: center;
     margin: 5px;
 }
+
+.AboutSection {
+    grid-column: 1 / 4;
+    margin-bottom: 10px;
+}

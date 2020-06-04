@@ -30,6 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instances)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -55,7 +58,10 @@
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
             <td>
-                @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = item.Id}) |
+                @Html.DisplayFor(modelItem => item.Instances)
+            </td>
+            <td>
+                @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = item.Id }) |
                 @Html.ActionLink("Edit", "Edit", new { item.Id }) |
                 @Html.ActionLink("Details", "Details", new { item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { item.Id })

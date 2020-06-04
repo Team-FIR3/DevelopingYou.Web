@@ -11,12 +11,14 @@ header {
 
 }
 
-a:link {
+header a:link {
     text-decoration: none;
+    color: white;
 }
 
-a:visited {
+header a:visited {
     text-decoration: none;
+    color: white;
 }
 
 
@@ -28,11 +30,11 @@ body {
 
 /* --- footer ---*/
 
-/*footer {
+footer {
     height: 30px;
     bottom: 0;
     background: #CE9B8C;
     color: white;
     position: fixed;
     width: 100%;
-}*/
+}

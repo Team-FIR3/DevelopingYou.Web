@@ -17,7 +17,12 @@ namespace DevelopingYou.Web.Controllers
             this.goalService = goalService;
         }
 
-        //[Route("/")]
+        [Route("/")]
+        public async Task<ActionResult<Goal>> ActiveGoals()
+        {
+            var activeGoals = await goalService.GetActiveGoals();
+            return View(activeGoals);
+        }
 
         public async Task<ActionResult<Goal>> Index()
         {

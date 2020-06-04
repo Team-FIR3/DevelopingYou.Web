@@ -14,6 +14,7 @@ namespace DevelopingYou.Web.Controllers
             _logger = logger;
         }
 
+        [Route("/Goals/Active")]
         public IActionResult Index()
         {
             _logger.LogInformation("We showed home!");

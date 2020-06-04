@@ -1,0 +1,44 @@
+﻿/* --- header ---*/
+
+header {
+    height: 30px;
+    top: 0;
+    background: #CE9B8C;
+    color: white;
+    position: fixed;
+    width: 460px;
+
+
+}
+
+header a:link {
+    text-decoration: none;
+    color: white;
+}
+
+header a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* --- body --- */
+
+body {
+    padding-top: 30px;
+    max-width: 460px;
+    margin: 0 auto;
+
+}
+
+
+/* --- footer ---*/
+
+footer {
+    height: 30px;
+    bottom: 0;
+    background: #CE9B8C;
+    color: white;
+    position: fixed;
+    width: 460px;
+}

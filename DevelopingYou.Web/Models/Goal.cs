@@ -19,19 +19,23 @@ namespace DevelopingYou.Web.Models
 
         [Required]
         [JsonPropertyName("startValue")]
+        [Display(Name = "Start Value")]
         public decimal StartValue { get; set; }
 
         [Required]
         [JsonPropertyName("targetValue")]
+        [Display(Name = "Target Value")]
         public decimal TargetValue { get; set; }
 
         [JsonPropertyName("category")]
         public Category Category { get; set; }
 
         [JsonPropertyName("startDate")]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
         [JsonPropertyName("endDate")]
+        [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
 
         [JsonPropertyName("instances")]

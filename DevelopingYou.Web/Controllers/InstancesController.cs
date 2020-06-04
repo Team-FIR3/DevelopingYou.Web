@@ -15,9 +15,10 @@ namespace DevelopingYou.Web.Controllers
             this.instanceService = instance;
         }
         //GET
-        public async Task<ActionResult> Index()
+        [Route("goals/{goalId}/instances")]
+        public async Task<ActionResult> Index(int goalId)
         {
-            var instances = await instanceService.GetInstances();
+            var instances = await instanceService.GetInstances(goalId);
            
 
             return View(instances);
@@ -52,7 +53,7 @@ namespace DevelopingYou.Web.Controllers
             {
                // instance.GoalId = goalId;
                 await instanceService.Create(instance);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { goalId = instance.GoalId });
 
             }
             catch

@@ -57,10 +57,10 @@ namespace DevelopingYou.Web.Services
             return result;
         }
 
-        public async Task<IEnumerable<Instance>> GetInstances()
+        public async Task<IEnumerable<Instance>> GetInstances(int goalId)
         {
             //May need list of instances 
-            var responseStream = await client.GetStreamAsync("Instances");
+            var responseStream = await client.GetStreamAsync($"Goals/{goalId}/Instances");
             List<Instance> result = await JsonSerializer.DeserializeAsync<List<Instance>>(responseStream);
             return result;
         }

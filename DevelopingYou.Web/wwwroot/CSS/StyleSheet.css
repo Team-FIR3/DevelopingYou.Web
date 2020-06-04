@@ -1,0 +1,28 @@
+﻿/* --- header ---*/
+
+header a {
+    height: 30px;
+    top: 0;
+    background: #CE9B8C;
+    color: white;
+    position: fixed;
+    width: 100%;
+}
+
+
+/* --- body --- */
+
+body {
+}
+
+
+/* --- footer ---*/
+
+/*footer {
+    height: 30px;
+    bottom: 0;
+    background: #CE9B8C;
+    color: white;
+    position: fixed;
+    width: 100%;
+}*/

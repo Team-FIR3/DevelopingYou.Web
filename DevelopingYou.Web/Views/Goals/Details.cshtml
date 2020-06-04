@@ -6,53 +6,67 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>Goal</h4>
+<div class="goals-details-card">
+    <h4>
+        @Html.DisplayFor(model => model.Title)
+    </h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
 
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StartValue)
-        </dt>
-        <dd class="col-sm-10">
+    <div class="goals-details-inside">
+        <span>
+            Start Value:
             @Html.DisplayFor(model => model.StartValue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TargetValue)
-        </dt>
-        <dd class="col-sm-10">
+        </span>
+
+        <span>
+            Goal: 
             @Html.DisplayFor(model => model.TargetValue)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-        @foreach (var item in Model.Instances)
-        {
+        </span>
 
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => item.Comment)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => item.Comment)
-            </dd>
-        }
+        <span>
+            End Date:
+            @Html.DisplayFor(model => model.EndDate.Date)
+        </span>
 
+        <div class="goal-details-options">
+            @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
+            @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = Model.Id })
 
-    </dl>
+        </div>
+
+        <div class="instances-log-heading">
+
+        </div>
+
+        <div class="instances-log">
 
 
-  
+
+            @foreach (var item in Model.Instances)
+            {
+                <div class="instance-entry">
+                    <span class="instance-start-time">
+                        @Html.DisplayFor(model => item.StartTime)
+                        -
+                    </span>
+                    <span class="instance-end-time">
+                        @Html.DisplayFor(model => item.EndTime.TimeOfDay)
+                    </span>
+                    
+                    <span class="goal-comment">
+                        @Html.DisplayFor(model => item.Comment)
+                    </span>
+                </div>
+            }
+        </div>
     </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { Model.Id }) |
-    <a asp-action="Index">Back to List</a>
+
+</div>
+
+
+ 
+
+<div class="breakdown">
+    <h2>Goal Breakdown:</h2>
+    <img src="~/Assets/ChartPlaceholder.png" class="chart" />
 </div>

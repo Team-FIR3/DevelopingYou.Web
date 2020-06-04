@@ -9,7 +9,6 @@
 
 
     <Folder Include="Views\Goals\" />
-    <Folder Include="wwwroot\" />
     <Folder Include="Views\About\" />
     <Folder Include="wwwroot\Assets\" />
   </ItemGroup>

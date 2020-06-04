@@ -11,6 +11,6 @@ namespace DevelopingYou.Web.Services
         Task<Goal> GetOneGoal(int id);
         Task<Goal> Edit(int id, Goal goal);
         Task Delete(int id);
-        Task<List<Goal>> GetActiveGoals();
+   
     }
 }

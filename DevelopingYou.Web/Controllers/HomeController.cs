@@ -1,4 +1,5 @@
 ﻿using DevelopingYou.Web.Models;
+using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -12,6 +13,14 @@ namespace DevelopingYou.Web.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+        }
+        private readonly IActiveGoal activeGoal;
+
+
+
+        public HomeController(IActiveGoal activeGoal)
+        {
+            this.activeGoal = activeGoal;
         }
 
         [Route("/Goals/Active")]

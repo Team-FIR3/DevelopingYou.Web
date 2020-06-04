@@ -1,23 +1,30 @@
 ﻿using DevelopingYou.Web.Models;
+using DevelopingYou.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace DevelopingYou.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IActiveGoal activeGoal;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IActiveGoal activeGoal)
         {
             _logger = logger;
+            this.activeGoal = activeGoal;
         }
+   
 
-        public IActionResult Index()
+        public async Task<ActionResult<Goal>> Index()
         {
             _logger.LogInformation("We showed home!");
-            return View();
+            var activeGoals = await activeGoal.GetActiveGoals();
+            return View(activeGoals);
+
         }
 
         public IActionResult Privacy()

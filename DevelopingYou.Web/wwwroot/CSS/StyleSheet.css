@@ -84,12 +84,14 @@ footer {
     width: 95%;
     box-shadow: black 0 0 2px;
     margin: auto;
+    grid-template-rows: 5% 30% 30% 30% 5%;
 }
 
 .active-goal {
     display: grid;
     grid-template-columns: 20px 50px 50px 50px 70px 240px 20px;
-    grid-template-rows: 10px 35% 35% 20% 10px;
+    grid-template-rows: 10px 60px 60px 60px 10px;
+    grid-row: 2 / 2;
 }
 
 .active-goal h3 {

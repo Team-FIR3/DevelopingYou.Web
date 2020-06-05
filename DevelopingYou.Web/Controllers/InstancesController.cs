@@ -53,7 +53,7 @@ namespace DevelopingYou.Web.Controllers
             {
                // instance.GoalId = goalId;
                 await instanceService.Create(instance);
-                return RedirectToAction(nameof(Index), new { goalId = instance.GoalId });
+                return RedirectToAction("Details", "Goals", new { Id = instance.GoalId });
 
             }
             catch

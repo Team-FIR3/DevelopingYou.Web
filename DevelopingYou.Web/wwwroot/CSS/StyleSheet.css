@@ -42,9 +42,12 @@ body {
 
 }
 
+.lastElement {
+    padding-left: 25px;
+}
+
 
 /* --- footer ---*/
-
 footer {
     height: 30px;
     bottom: 0;

@@ -11,6 +11,7 @@ header {
 
 }
 
+
 header a:link {
     text-decoration: none;
     color: white;
@@ -19,6 +20,10 @@ header a:link {
 header a:visited {
     text-decoration: none;
     color: white;
+}
+
+.activeGoals {
+    font-size: 30px;
 }
 
 
@@ -85,6 +90,11 @@ footer {
     display: grid;
     grid-template-columns: 20px 50px 50px 50px 70px 240px 20px;
     grid-template-rows: 10px 35% 35% 20% 10px;
+}
+
+.active-goal h3 {
+    font-size: 30px;
+    
 }
 
 .hometext {

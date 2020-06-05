@@ -4,8 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -23,9 +21,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instances)
             </th>
             <th></th>
         </tr>
@@ -45,10 +40,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instances)
-            </td>
-            <td>
+            <td class="lastElement">
                 @Html.ActionLink("Create Instance", "Create", "Instances", new { GoalId = item.Id }) |
                 @Html.ActionLink("Edit", "Edit", new { item.Id }) |
                 @Html.ActionLink("Details", "Details", new { item.Id }) |

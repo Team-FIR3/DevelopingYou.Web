@@ -1,4 +1,8 @@
-﻿/* --- header ---*/
+﻿* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- header ---*/
 
 header {
     height: 50px;
@@ -11,6 +15,7 @@ header {
 
 }
 
+
 header a:link {
     text-decoration: none;
     color: white;
@@ -19,6 +24,11 @@ header a:link {
 header a:visited {
     text-decoration: none;
     color: white;
+}
+
+.activeGoals {
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 
@@ -32,9 +42,12 @@ body {
 
 }
 
+.lastElement {
+    padding-left: 25px;
+}
+
 
 /* --- footer ---*/
-
 footer {
     height: 30px;
     bottom: 0;
@@ -76,18 +89,28 @@ footer {
 
 .wrapper {
     display: grid;
-    
+    width: 95%;
+    box-shadow: black 0 0 2px;
+    margin: auto;
+    grid-template-rows: 5% 30% 30% 30% 5%;
 }
 
 .active-goal {
     display: grid;
-    grid-template-columns: 20px 50px 50px 50px 10px 300px 20px;
-    grid-template-rows: 10px 35% 35% 20% 10px;
+    grid-template-columns: 20px 50px 50px 50px 70px 240px 20px;
+    grid-template-rows: 10px 60px 60px 60px 10px;
+    grid-row: 2 / 2;
+}
+
+.active-goal h3 {
+    font-size: 20px;
+    
 }
 
 .hometext {
-    grid-column: 2 / 4;
+    grid-column: 2 / 6;
     grid-row: 2 / 2;
+    
 }
 
 .firstBadge {

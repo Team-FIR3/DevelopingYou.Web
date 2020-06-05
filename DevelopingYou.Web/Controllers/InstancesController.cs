@@ -51,9 +51,9 @@ namespace DevelopingYou.Web.Controllers
         {
             try
             {
-               // instance.GoalId = goalId;
                 await instanceService.Create(instance);
                 return RedirectToAction("Details", "Goals", new { Id = instance.GoalId });
+                // Refactored one more line of code today Keith!!!!
 
             }
             catch

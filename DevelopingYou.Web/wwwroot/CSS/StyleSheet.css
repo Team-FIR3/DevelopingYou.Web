@@ -1,4 +1,8 @@
-﻿/* --- header ---*/
+﻿* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- header ---*/
 
 header {
     height: 50px;
@@ -24,6 +28,7 @@ header a:visited {
 
 .activeGoals {
     font-size: 30px;
+    margin-bottom: 10px;
 }
 
 
@@ -95,7 +100,7 @@ footer {
 }
 
 .active-goal h3 {
-    font-size: 30px;
+    font-size: 20px;
     
 }
 
